@@ -1,3 +1,658 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+/*--------------------------------------------------------------
+	# 
+	#	PURGECSS IGNORE STARTS HERE, 
+	#	ALL STYLES BELOW WILL NOT BE PURGED
+	# Styles from here are whitelisted for use in theme.css 
+	#
+--------------------------------------------------------------*/
+/* purgecss start ignore */
+
+.btn {
+	@apply px-8;
+	@apply py-4;
+	@apply bg-cerulean-blue;
+	@apply text-xs;
+	@apply font-light;
+	@apply text-white;
+	@apply rounded-sm;
+  -webkit-font-smoothing: auto;
+}
+.btn-sm {
+	@apply px-4 !important;
+	@apply py-2 !important;
+}
+.close {
+	@apply p-3 !important;
+}
+
+a:focus {
+  @apply outline-none;
+}
+
+/* .wp-block-group p {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+} */
+.leading-relaxed {
+  line-height: 1.75;
+}
+
+body {
+  font-kerning: normal;
+  font-feature-settings: "kern","liga","clig","calt";
+  word-wrap: break-word;
+}
+
+
+.font-regular,
+.font-light,
+.font-ultra-light,
+.font-bold {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+.custom-logo {
+  @apply h-6 w-auto text-light-navy;
+}
+
+
+/*--------------------------------------------------------------
+# Primary nav
+--------------------------------------------------------------*/
+
+@screen lg {
+	.nav-collapse .dropdown-menu {
+		@apply border-none;
+		@apply m-0;
+		@apply rounded-none;
+		@apply px-10;
+		@apply py-3;
+		@apply shadow-2xl;
+	}
+	.nav-collapse .dropdown-menu.show {
+		left: -50% !important;
+		margin-left: 50% !important;
+	}
+	.nav-collapse .dropdown-item {
+		border-style: solid;
+		border-bottom-width: 1px;
+		@apply border-ice-blue;
+		@apply py-3;
+		@apply px-0;
+	}
+	.nav-collapse .dropdown-item:last-child {
+		border-bottom: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+# Mobile navbar with toggle
+--------------------------------------------------------------*/
+
+.toggler {
+	display: none;
+}
+
+@media (max-width: 1024px) {
+	.nav-collapse {
+		background: white	;
+		transform: translateX(100vw);
+		position: fixed;
+		transition: all .5s cubic-bezier(0.820, 0.085, 0.395, 0.895);
+		top: 4rem;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	.inactive {
+		transform: translateX(0);
+	}
+	.toggler {
+		display: block;
+		transform: rotate(0);
+		transition: all .5s cubic-bezier(0.820, 0.085, 0.395, 0.895);
+	}
+	.toggler.open {
+		transform: rotate(90deg);
+	}
+
+	.nav-collapse .dropdown-menu.show {
+		position: relative !important;
+		transform: none !important;	
+		border: 0 !important;
+		width: 100% !important;
+	}
+	.nav-collapse .nav-link {
+		padding-left: 0 !important;
+	}
+	.nav-collapse .nav-link,
+	.nav-collapse .dropdown-item {
+		font-size: 1.25rem !important;
+	}
+}
+
+.nav-collapse .nav-link {
+	display: flex !important;
+	align-items: center;
+}
+.nav-collapse .nav-link:hover,
+.nav-collapse .dropdown-item:hover  {
+	@apply bg-transparent;
+	@apply text-cerulean-blue !important;
+}
+.nav-collapse .dropdown-item.active,
+.nav-collapse .nav-link.active,
+.nav-collapse .dropdown-item:active {
+	@apply bg-transparent !important;
+	@apply text-light-navy;
+}
+@screen lg {
+	.nav-collapse .nav-link {
+		@apply py-10;
+	}	
+}
+
+
+.dropdown-toggle:after {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+	height: .8rem;
+	width: .8rem;
+	border: none !important;
+	color: red;
+	display: block;
+	background-size: cover;
+	transform: rotate(0deg);
+	transition: all .25s cubic-bezier(0.820, 0.085, 0.395, 0.895);
+}
+.show .dropdown-toggle:after {
+	transform: rotate(180deg);
+}
+
+
+/*--------------------------------------------------------------
+# Animated hamburger
+--------------------------------------------------------------*/
+
+.toggler {
+	position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+	cursor: pointer;
+	height: 1rem;
+}
+
+.toggler span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+/* Icon 3 */
+
+.toggler span:nth-child(1) {
+	top: 0;
+}
+
+.toggler span:nth-child(2),.toggler span:nth-child(3) {
+  top: .5rem;
+}
+
+.toggler span:nth-child(4) {
+  top: 1rem;
+}
+
+.toggler.open span:nth-child(1) {
+  top: .5rem;
+  width: 0%;
+  left: 50%;
+}
+
+.toggler.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.toggler.open span:nth-child(3) {
+
+  transform: rotate(-45deg);
+}
+
+.toggler.open span:nth-child(4) {
+  top: .5rem;
+  width: 0%;
+  left: 50%;
+}
+
+
+/*--------------------------------------------------------------
+# CW Agenda specific styles
+--------------------------------------------------------------*/
+
+.cw-agenda-shortcode * {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+/* make borders at bottom neutral for mobile */
+.cw-agenda-row .cw-agenda-presentation,
+.cw-agenda-row .cw-agenda-freeform {
+	border-bottom-color: #e2e8f0 !important;
+}
+.cw-agenda-row:nth-child(2):not(.cw-row-type-title_row) {
+	@apply border-t;
+}
+@screen lg {
+	.cw-agenda-row .cw-agenda-presentation,
+	.cw-agenda-row .cw-agenda-freeform {
+		border-bottom-width: 0 !important;
+	}
+}
+.cell-time:empty {
+	height: 0;
+	overflow: hidden;
+	padding: 0;
+}
+@screen lg {
+	.cell-time:empty {
+		display: block;
+	}	
+}
+.item-size-std {
+	@apply flex-1;
+}
+.item-size-small {
+	@apply flex-none;
+}
+.cw-agenda-day {
+	@apply mt-16;
+}
+
+/*--------------------------------------------------------------
+# CW Sponsor specific styles
+--------------------------------------------------------------*/
+.cw-sponsor-row + .cw-sponsor-category-title {
+	@apply mt-24;
+}
+
+/*--------------------------------------------------------------
+# CW Speaker specific styles
+--------------------------------------------------------------*/
+/* remove gutter padding if inside modal */
+.modal-body > .px-container {
+	padding-left: 0;
+	padding-right: 0;
+}
+.modal-dialog {
+  max-width: 90vw !important; 
+}
+.cw-agenda-shortcode {
+	@apply text-dark;
+}
+.cw-agenda-presentation-title,
+.cw-agenda-presentation-title a {
+	@apply font-regular;
+	@apply text-cerulean-blue;
+}
+.cw-speaker-name {
+	@apply font-regular;
+}
+.cw-speaker {
+	@apply text-dark;
+}
+
+/*--------------------------------------------------------------
+# Responsive embed
+--------------------------------------------------------------*/
+.embed-container { 
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+} 
+.embed-container iframe, .embed-container object, .embed-container embed { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%;
+}
+
+/*--------------------------------------------------------------
+# Containers
+--------------------------------------------------------------*/
+.px-container,
+.entry-content,
+.entry-headers,
+.wp-block-group,
+.wp-block-columns,
+.entry-header {
+	@apply px-container-xs;
+}	
+@screen sm {
+	.px-container,
+	.entry-content,
+	.entry-headers,
+	.wp-block-group,
+	.wp-block-columns,
+	.entry-header {
+		@apply px-container-sm;
+	}	
+}
+@screen md {
+	.px-container,
+	.entry-content,
+	.entry-headers,
+	.wp-block-group,
+	.wp-block-columns,
+	.entry-header {
+		@apply px-container-md;
+	}	
+}
+@screen lg {
+	.px-container,
+	.entry-content,
+	.entry-headers,
+	.wp-block-group,
+	.wp-block-columns,
+	.entry-header {
+		@apply px-container-lg;
+	}	
+}
+@screen xl {
+	.px-container,
+	.entry-content,
+	.entry-headers,
+	.wp-block-group,
+	.wp-block-columns,
+	.entry-header {
+		@apply px-container-xl;
+	}	
+}
+@media (min-width: 1440px) {
+	.px-container,
+	.entry-content,
+	.entry-headers,
+	.wp-block-group,
+	.wp-block-columns,
+	.entry-header {
+		@apply px-container-2xl;
+	}	
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Base typography
+--------------------------------------------------------------*/
+strong,
+b {
+	@apply font-regular;
+	@apply font-normal;
+}
+
+/*--------------------------------------------------------------
+# Post typography
+--------------------------------------------------------------*/
+
+.entry-header h1 {
+	@apply font-light;
+	@apply text-5xl;
+}
+.entry-content h2 {
+	@apply font-light;
+	@apply text-5xl;
+	@apply mb-8;
+}
+.entry-content h3 {
+	@apply font-light;
+	@apply text-3xl;
+	@apply mb-8;
+}
+.entry-content h4 {
+	@apply font-light;
+	@apply text-xl;
+}
+.entry-content p + h3,
+.entry-content p + h4 {
+	@apply mt-16;
+}
+.entry-content h4 + p {
+	@apply mt-3;
+}
+.entry-content p + p {
+	@apply mt-6;
+}
+.entry-content blockquote {
+	@apply font-light;
+	@apply text-2xl;
+	@apply max-w-4xl;
+}
+
+
+/*--------------------------------------------------------------
+# Gutenberg colour styles
+--------------------------------------------------------------*/
+
+.bg-black, .has-black-background-color {@apply bg-black;}
+.bg-slate, .has-slate-background-color {@apply bg-slate;}
+.bg-marine, .has-marine-background-color {@apply bg-marine;}
+.bg-navy, .has-navy-background-color {@apply bg-navy;}
+.bg-light-navy, .has-light-navy-background-color {@apply bg-light-navy;}
+.bg-cerulean-blue, .has-cerulean-blue-background-color {@apply bg-cerulean-blue;}
+.bg-very-light-pink, .has-very-light-pink-background-color {@apply bg-very-light-pink;}
+.bg-off-white, .has-off-white-background-color {@apply bg-off-white;}
+.bg-pale-brown, .has-pale-brown-background-color {@apply bg-pale-brown;}
+.bg-ultramarine, .has-ultramarine-background-color {@apply bg-ultramarine;}
+.bg-bluey-grey, .has-bluey-grey-background-color {@apply bg-bluey-grey;}
+.bg-light-blue-grey, .has-light-blue-grey-background-color {@apply bg-light-blue-grey;}
+.bg-ice-blue, .has-ice-blue-background-color {@apply bg-ice-blue;}
+.bg-dark-grey, .has-dark-grey-background-color {@apply bg-dark-grey;}
+.bg-white, .has-white-background-color {@apply bg-white;}
+.bg-red-brown, .has-red-brown-background-color {@apply bg-red-brown;}
+.bg-mahogany, .has-mahogany-background-color {@apply bg-mahogany;}
+.bg-toxic-green, .has-toxic-green-background-color {@apply bg-toxic-green;}
+.bg-almost-black, .has-almost-black-background-color {@apply bg-almost-black;}
+.bg-bright-yellow, .has-bright-yellow-background-color {@apply bg-bright-yellow;}
+.bg-bright-sky-blue, .has-bright-sky-blue-background-color {@apply bg-bright-sky-blue;}
+.bg-reddish-pink, .has-reddish-pink-background-color {@apply bg-reddish-pink;}
+.bg-brownish-grey, .has-brownish-grey-background-color {@apply bg-brownish-grey;}
+.bg-dark, .has-dark-background-color {@apply bg-dark;}
+.bg-pine, .has-pine-background-color {@apply bg-pine;}
+
+:root {
+	--color-white: #ffffff;
+	--color-off-white: #f3f2ee;
+	--color-very-light-pink: #d4d4d4;
+	--color-bluey-grey: #98a2ae;
+	--color-slate: #4d5766;
+	--color-black: #000000;
+	--color-bright-sky-blue: #00c9ff;
+	--color-cerulean-blue: #0065ed;
+	--color-light-navy: #124191;
+	--color-ultramarine: #1000a9;
+	--color-navy: #001235;
+	--color-bright-yellow: #fffa00;
+	--color-reddish-pink: #ff3154;
+	--color-pale-brown: #a19377;
+	--color-mahogany: #550000;
+	--color-toxic-green: #35b41f;
+
+	
+	
+	--text-light: 'NokiaPureHeadlineLight',sans-serif;
+	--text-regular: 'NokiaPureHeadlineRegular',sans-serif;
+	--text-ultra-light: 'NokiaPureHeadlineUltralight',sans-serif;
+	--text-bold: 'NokiaPureHeadlineBold',sans-serif;
+}
+
+.has-white-color {color: #ffffff;}
+.has-off-white-color {color: #f3f2ee;}
+.has-very-light-pink-color {color: #d4d4d4;}
+.has-bluey-grey-color {color: #98a2ae;}
+.has-slate-color {color: #4d5766;}
+.has-black-color {color: #000000;}
+.has-bright-sky-blue-color {color: #00c9ff;}
+.has-cerulean-blue-color {color: #0065ed;}
+.has-light-navy-color {color: #124191;}
+.has-ultramarine-color {color: #1000a9;}
+.has-navy-color {color: #001235;}
+.has-bright-yellow-color {color: #fffa00;}
+.has-reddish-pink-color {color: #ff3154;}
+.has-pale-brown-color {color: #a19377;}
+.has-mahogany-color {color: #550000;}
+.has-toxic-green-color {color: #35b41f;}
+
+figure {
+	margin: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Content container structure
+--------------------------------------------------------------*/
+
+/* page header */
+.entry-header {
+	@apply pt-16;
+	@apply pb-10;
+	@apply border-b;
+}
+.entry-header:empty {
+	@apply hidden;
+}
+/* doubles container padding */
+.wp-block-group,
+.wp-block-columns {
+	
+	@apply mb-0;
+}
+/* normal container padding if set as wide */
+.wp-block-group.alignwide,
+.wp-block-columns.alignwide {
+	@apply px-0;
+}
+
+/* primary page content */
+.entry-content {
+	@apply pt-24;
+	@apply pb-48;
+}
+.entry-content > .has-background:first-child {
+	@apply -mt-24;
+}
+.entry-content > .has-background:last-child {
+	@apply -mb-48;
+}
+
+/* makes full-width */
+.entry-content .alignfull {
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	max-width: 100vw;
+	width: 100vw;
+}
+
+
+
+
+@screen lg {
+	.wp-block-columns {
+		@apply flex;
+		@apply flex-1;
+	}
+
+	.wp-block-column {
+		min-width: 0;
+    word-break: break-word;
+		overflow-wrap: break-word;
+		@apply flex-1;
+	}
+}
+
+.wp-block-media-text {
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 50% 1fr;
+}
+.has-, .wp-block-media-text.has-media-on-the-right .wp-block-media-text__media,
+.wp-block-media-text .wp-block-media-text__content {
+	grid-column: 2;
+	grid-row: 1;
+}
+.wp-block-media-text .wp-block-media-text__content,
+.wp-block-media-text .wp-block-media-text__media {
+	@apply self-center;
+}
+
+.is-vertically-aligned-center {
+	@apply self-center;
+}
+.is-vertically-aligned-center {
+	@apply self-center;
+}
+/* this sets the gutter */
+.wp-block-column:not(:first-child) {
+	@apply ml-10;
+}
+
+
+/* purgecss end ignore */
