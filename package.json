@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "autoprefixer": "^9.5.1",
-    "tailwindcss": "^1.0"
+    "tailwindcss": "^1.2.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^1.2.0",
@@ -17,6 +17,7 @@
     "cssnano": "^4.1.10",
     "live-server": "^1.2.1",
     "postcss-cli": "^6.1.2",
-    "tailwind-css-variables": "^2.0.3"
+    "tailwind-css-variables": "^2.0.3",
+    "tailwindcss-responsive-embed": "^1.0.0"
   }
 }
