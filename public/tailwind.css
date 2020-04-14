@@ -26,7 +26,8 @@
 [class^="cw-block-"] p a:not(.btn):not(.wp-block-button__link),
 [class^="cw-block-"] h4 a:not(.btn):not(.wp-block-button__link),
 .editor-block-list__layout a:not(.btn) {
-  text-decoration: none;
+  text-decoration: unerline;
+  text-decoration-color: currentColor;
   transition: all 450ms ease-in-out;
   color: var(--anchor);
   position: relative;
