@@ -125,7 +125,7 @@
   @apply inline-block;
   @apply mb-1;
   @apply mt-3;
-  color: var(--primaryp);
+  color: var(--primary);
   font-weight: var(--font-light);
 }
 .entry-content ul:not(.blocks-gallery-grid),
