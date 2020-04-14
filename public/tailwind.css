@@ -30,8 +30,6 @@
   transition: all 450ms ease-in-out;
   color: var(--anchor);
   position: relative;
-  text-shadow: -1px -1px 0 var(--white), 1px -1px 0 var(--white), -1px 1px 0 var(--white), 1px 1px 0 var(--white);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 2px, var(--anchor-underline) 2px, var(--anchor-underline) 2.5px, rgba(0, 0, 0, 0) 2.5px);
 }
 .entry-content p a:not(.btn):not(.wp-block-button__link):hover,
 [class^="cw-block-"] p a:not(.btn):not(.wp-block-button__link):hover,
@@ -125,7 +123,7 @@
   @apply inline-block;
   @apply mb-1;
   @apply mt-3;
-  color: var(--primary);
+  color: var(--primaryp);
   font-weight: var(--font-light);
 }
 .entry-content ul:not(.blocks-gallery-grid),
