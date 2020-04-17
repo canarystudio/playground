@@ -35,6 +35,7 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
     /^p.-/,
     /^lg:p.-/,
     /^rounded-sm/,
+    /^shadow-./,
     /^text-./,
     /^text-./,
     /^hover:text-./,
