@@ -61,10 +61,10 @@ module.exports = {
         xl: "1380px",
       },
       padding: {
-        container: "7vw",
-        "container-lg": "12vw",
-        "container-xl": "16vw",
-        "container-2xl": "20vw",
+        container: "var(--p-container)", // container: "7vw",
+        "container-lg": "var(--p-container-lg)", // "container-lg": "12vw",
+        "container-xl": "var(--p-container-xl)", // "container-xl": "16vw",
+        "container-2xl": "var(--p-container-2xl)", // "container-2xl": "20vw",
       },
       width: {
         "1/8": "12.5%",

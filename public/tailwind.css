@@ -20,23 +20,6 @@
 # BASE TYPOGRAPHY
 ==============================================================*/
 
-/* primary content anchors */
-.entry-content p a:not(.btn):not(.wp-block-button__link),
-.entry-content li a:not(.btn):not(.wp-block-button__link),
-[class^="cw-block-"] p a:not(.btn):not(.wp-block-button__link),
-[class^="cw-block-"] h4 a:not(.btn):not(.wp-block-button__link),
-.editor-block-list__layout a:not(.btn) {
-  text-decoration: unerline;
-  text-decoration-color: currentColor;
-  transition: all 450ms ease-in-out;
-  color: var(--anchor);
-  position: relative;
-}
-.entry-content p a:not(.btn):not(.wp-block-button__link):hover,
-[class^="cw-block-"] p a:not(.btn):not(.wp-block-button__link):hover,
-[class^="cw-block-"] h4 a:not(.btn):not(.wp-block-button__link):hover {
-  color: var(--primary);
-}
 
 
 
@@ -53,7 +36,12 @@
 /* this sets the gutter */
 @screen lg {
   .wp-block-column:not(:first-child) {
-    @apply ml-10;
+    margin-left: var(--inner-padding-x);
+  }
+  .is-style-gapless.wp-block-columns>.wp-block-column {
+    margin-left: 0;
+    margin-right: 0;
+    flex-basis: 50%
   }
 }
 
@@ -90,12 +78,7 @@
   }
 }
 
-/*--------------------------------------------------------------
-# Gutenberg Media + Text
---------------------------------------------------------------*/
-.wp-block-media-text.has-background .wp-block-media-text__content {
-  @apply p-12;
-}
+
 
 /*--------------------------------------------------------------
 # Responsive embed
@@ -211,6 +194,7 @@
 /* sets up all of the primary section gutters */
 .entry-content,
 .entry-header,
+.cw-page-banner,
 .wp-block-group.alignfull > .wp-block-group__inner-container {
   @apply px-container;
 }
@@ -219,6 +203,7 @@
   .px-container,
   .entry-content,
   .entry-header,
+  .cw-page-banner,
   .wp-block-group.alignfull > .wp-block-group__inner-container {
     @apply px-container-lg;
   }
@@ -227,6 +212,7 @@
   .px-container,
   .entry-content,
   .entry-header,
+  .cw-page-banner,
   .wp-block-group.alignfull > .wp-block-group__inner-container {
     @apply px-container-xl;
   }
@@ -234,6 +220,7 @@
 @media (min-width: 1540px) {
   .px-container,
   .entry-content,
+  .cw-page-banner,
   .entry-header,
   .wp-block-group.alignfull > .wp-block-group__inner-container {
     @apply px-container-2xl;
