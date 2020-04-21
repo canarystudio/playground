@@ -24,6 +24,7 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
     /^items-/,
     /^justify-/,
     /^lg:max-w-/,
+    /^leading-./,
     /^m-/,
     /^lg:m-/,
     /^m.-/,
