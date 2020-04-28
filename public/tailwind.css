@@ -76,6 +76,9 @@
     @apply flex-1;
     @apply mb-0;
   }
+  .entry-content .wp-block-column[style] {
+    flex-grow: 0 !important;
+  }
 }
 
 

@@ -14,6 +14,7 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
     "xl:pl-container",
   ],
   whitelistPatterns: [
+    /^border-./,
     /^fill-/,
     /^flex-/,
     /^lg:flex-/,
@@ -21,6 +22,7 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
     /^h-/,
     /^lg:h-/,
     /^has-./,
+    /^inline./,
     /^items-/,
     /^justify-/,
     /^lg:max-w-/,
