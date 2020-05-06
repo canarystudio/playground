@@ -44,6 +44,7 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
     /^hover:text-./,
     /^w-/,
     /^lg:w-/,
+    /^z-/
   ],
   whitelistPatternsChildren: [/^fa-/],
   defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
