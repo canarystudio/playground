@@ -1,3 +1,285 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* purgecss start ignore */
+
+/*==============================================================
+# FONTS
+==============================================================*/
+
+/* base font rendering */
+.font-normal,
+.font-light,
+.font-thin,
+.font-bold {
+  text-rendering: optimizeLegibility;
+}
+
+/*==============================================================
+# BASE TYPOGRAPHY
+==============================================================*/
+
+
+
+
+/*==============================================================
+# GUTENBERG BASE
+==============================================================*/
+
+.is-vertically-aligned-center {
+  @apply self-center;
+}
+
+.is-vertically-aligned-center {
+  @apply self-center;
+}
+
+/* this sets the gutter */
+@screen lg {
+  .wp-block-column:not(:first-child) {
+    margin-left: var(--inner-padding-x);
+  }
+
+  .is-style-gapless.wp-block-columns>.wp-block-column {
+    margin-left: 0;
+    margin-right: 0;
+    flex-basis: 50%
+  }
+}
+
+/* make columns collapse up to lg */
+@media (max-width: 1024px) {
+  .wp-block-column {
+    flex-basis: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Gutenberg Columns
+--------------------------------------------------------------*/
+
+.entry-content .wp-block-columns {
+  @apply flex-wrap;
+  @apply mb-0;
+}
+
+@screen lg {
+  .entry-content .wp-block-columns {
+    @apply flex-nowrap;
+    @apply flex;
+    @apply flex-1;
+  }
+
+  .entry-content .wp-block-column {
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    @apply flex-1;
+    @apply mb-0;
+  }
+
+  .entry-content .wp-block-column[style] {
+    flex-grow: 0 !important;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Gutenberg elements
+--------------------------------------------------------------*/
+
+.wp-block-image figcaption,
+.blocks-gallery-caption {
+  @apply text-base;
+  @apply mb-0;
+}
+
+.wp-block-image figcaption {
+  margin-top: 16px;
+}
+
+.wp-block-image figcaption strong {
+  @apply text-lg;
+  @apply inline-block;
+  @apply mb-1;
+  @apply mt-3;
+  color: var(--primaryp);
+  font-weight: var(--font-light);
+}
+
+.entry-content ul:not(.blocks-gallery-grid),
+.entry-content ul:not(.blocks-gallery-grid),
+.editor-block-list__layout ul:not(.blocks-gallery-grid) {
+  @apply list-outside;
+  @apply list-disc;
+  @apply ml-12;
+}
+
+.entry-content figure {
+  margin: 0;
+}
+
+.blocks-gallery-grid .blocks-gallery-image figcaption,
+.blocks-gallery-grid .blocks-gallery-item figcaption,
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption {
+  @apply text-base;
+  @apply leading-snug;
+  @apply p-8;
+}
+
+
+/*--------------------------------------------------------------
+# Primary nav
+--------------------------------------------------------------*/
+
+@screen lg {
+  .nav-collapse .dropdown-menu {
+    @apply border-none;
+    @apply m-0;
+    @apply rounded-none;
+    @apply px-10;
+    @apply py-3;
+    @apply shadow-2xl;
+  }
+
+  .nav-collapse .dropdown-menu.show {
+    left: -50% !important;
+    margin-left: 50% !important;
+  }
+
+  .nav-collapse .dropdown-item {
+    border-style: solid;
+    border-bottom-width: 1px;
+    border-color: var(--gray-100);
+    @apply py-3;
+    @apply px-0;
+  }
+
+  .nav-collapse .dropdown-item:last-child {
+    border-bottom: 0;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Primary Footer
+--------------------------------------------------------------*/
+
+.logo-footer svg {
+  color: var(--white);
+}
+
+
+/*--------------------------------------------------------------
+# Nokia typography
+--------------------------------------------------------------*/
+
+/* blockquotes */
+.entry-content blockquote {
+  font-weight: var(--font-light);
+  @apply text-xl;
+  @apply max-w-4xl;
+}
+
+@screen lg {
+  .entry-content blockquote {
+    @apply text-2xl;
+  }
+}
+
+
+/*==============================================================
+	# 8. site-specific spacing
+==============================================================*/
+
+/* sets up all of the primary section gutters */
+.entry-content,
+.entry-header,
+.cw-page-banner,
+.wp-block-group.alignfull>.wp-block-group__inner-container {
+  @apply px-container;
+}
+
+@screen lg {
+
+  .px-container,
+  .entry-content,
+  .entry-header,
+  .cw-page-banner,
+  .wp-block-group.alignfull>.wp-block-group__inner-container {
+    @apply px-container-lg;
+  }
+}
+
+@screen xl {
+
+  .px-container,
+  .entry-content,
+  .entry-header,
+  .cw-page-banner,
+  .wp-block-group.alignfull>.wp-block-group__inner-container {
+    @apply px-container-xl;
+  }
+}
+
+@media (min-width: 1540px) {
+
+  .px-container,
+  .entry-content,
+  .cw-page-banner,
+  .entry-header,
+  .wp-block-group.alignfull>.wp-block-group__inner-container {
+    @apply px-container-2xl;
+  }
+}
+
+.pr-container {
+  @apply px-container;
+}
+
+@screen lg {
+  .pr-container {
+    @apply pr-container-lg;
+  }
+}
+
+@screen xl {
+  .pr-container {
+    @apply pr-container-xl;
+  }
+}
+
+@media (min-width: 1540px) {
+  .pr-container {
+    @apply pr-container-2xl;
+  }
+}
+
+.pl-container {
+  @apply px-container;
+}
+
+@screen lg {
+  .pl-container {
+    @apply pl-container-lg;
+  }
+}
+
+@screen xl {
+  .pl-container {
+    @apply pl-container-xl;
+  }
+}
+
+@media (min-width: 1540px) {
+  .pl-container {
+    @apply pl-container-2xl;
+  }
+}
+
+
+/* purgecss end ignore */

@@ -6,8 +6,11 @@
     "start": "npm run serve"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^9.8.6",
-    "tailwindcss": "^1.7.2"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+    "tailwindcss-wp-background": "file:../tailwindcss-wp-background",
+    "tailwindcss-wp-text": "file:../tailwindcss-wp-text"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
