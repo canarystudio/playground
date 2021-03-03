@@ -1,5 +1,5 @@
-node_modules
+/node_modules/*
 public/build
 yarn.lock
-!node_modules/tailwindcss-wp-background
-!node_modules/tailwindcss-wp-text
+!/node_modules/tailwindcss-wp-text
+!/node_modules/tailwindcss-wp-background
